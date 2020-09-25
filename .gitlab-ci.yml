@@ -1,0 +1,22 @@
+image: maven:latest
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+
+stages:
+  - build
+  - test
+
+
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn test
